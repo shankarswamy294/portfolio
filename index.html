@@ -28,8 +28,91 @@
       --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
       --font-display: "Inter", var(--font);
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --ai-violet: #8b5cf6;
+      --ai-violet-dim: rgba(139, 92, 246, 0.14);
+      --ai-orchid: #c4b5fd;
     }
     * { box-sizing: border-box; }
+
+    /* AI highlight language */
+    .ai-text {
+      background: linear-gradient(100deg, rgba(139, 92, 246, 0.2), rgba(94, 212, 192, 0.12));
+      border: 1px solid rgba(167, 139, 250, 0.28);
+      border-radius: 4px;
+      padding: 0.06em 0.35em 0.12em;
+      color: #ede9fe;
+      font-weight: 500;
+    }
+    h1 .grad {
+      background: linear-gradient(120deg, #fff 0%, #a5b4fc 35%, #5ed4c0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .eyebrow-ai { color: var(--ai-orchid); }
+    .badge--ai {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.22), rgba(94, 212, 192, 0.1)) !important;
+      border: 1px solid rgba(167, 139, 250, 0.45) !important;
+      color: #e9d5ff !important;
+      box-shadow: 0 0 24px -8px rgba(139, 92, 246, 0.35);
+    }
+    .nav-link--ai { color: #c4b5fd !important; font-weight: 500; }
+    .nav-link--ai:hover { color: #e9d5ff !important; }
+    section.section--ai {
+      position: relative;
+      background: linear-gradient(180deg, rgba(50, 30, 90, 0.12) 0%, rgba(3, 4, 7, 0) 50%);
+      border-top: 1px solid rgba(139, 92, 246, 0.1);
+    }
+    .section-kicker--ai {
+      color: #a78bfa;
+      text-shadow: 0 0 24px rgba(139, 92, 246, 0.2);
+    }
+    .title-ai-mark {
+      display: inline-block; margin-left: 0.35rem; font-size: 0.5em; font-weight: 700;
+      letter-spacing: 0.12em; vertical-align: super; color: #a78bfa; padding: 0.15em 0.4em;
+      background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px;
+    }
+    .card.card--ai {
+      border-color: rgba(139, 92, 246, 0.32);
+      background: linear-gradient(155deg, rgba(32, 22, 55, 0.55) 0%, rgba(12, 15, 22, 0.98) 100%);
+      box-shadow: 0 0 48px -20px rgba(139, 92, 246, 0.2);
+    }
+    .card.card--ai .card-icon {
+      background: var(--ai-violet-dim);
+      color: var(--ai-orchid);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+    .card.featured--ai, .card.featured.featured--ai { border-color: rgba(139, 92, 246, 0.15); }
+    .pill--ai {
+      border-color: rgba(167, 139, 250, 0.35);
+      color: #d8b4fe;
+      background: rgba(88, 28, 135, 0.12);
+    }
+    .ref-build--ai {
+      border: 1px solid rgba(94, 212, 192, 0.25) !important;
+      background: linear-gradient(135deg, rgba(15, 40, 35, 0.4), rgba(10, 12, 18, 0.95)) !important;
+    }
+    .card.proj-card--ai { position: relative; overflow: hidden; }
+    .card.proj-card--ai::before {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, #8b5cf6, #5ed4c0, #3b82f6);
+    }
+    .proj-card--ai .card-icon { color: #c4b5fd; background: var(--ai-violet-dim); }
+    .proj-badge-ai {
+      display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
+      color: #a78bfa; margin-left: 0.45rem; vertical-align: middle; padding: 0.2rem 0.45rem;
+      border: 1px solid rgba(139, 92, 246, 0.4); border-radius: 4px; background: rgba(139, 92, 246, 0.1);
+    }
+    .chip--ai {
+      border-color: rgba(168, 85, 247, 0.35) !important;
+      color: #d8b4fe !important;
+      background: rgba(88, 28, 135, 0.15) !important;
+    }
+    .subhead--ai { color: #a78bfa !important; }
+    @media print {
+      .ai-text, .badge--ai, .title-ai-mark { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
     html { scroll-behavior: smooth; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -222,12 +305,6 @@
       line-height: 1.12;
       margin: 0 0 1rem;
       letter-spacing: -0.028em;
-    }
-    h1 .grad {
-      background: linear-gradient(120deg, var(--text) 0%, #a8c4e8 40%, var(--teal) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
     .tagline {
       font-size: 1.15rem;
@@ -559,7 +636,7 @@
       <div class="nav-links">
         <a href="#work">Experience</a>
         <a href="#cabeza">Cabeza.ai</a>
-        <a href="#ai-builds">AI builds</a>
+        <a href="#ai-builds" class="nav-link--ai">AI builds</a>
         <a href="#recommendations">Testimonials</a>
         <a class="nav-cta" href="mailto:shankarswamy294@gmail.com">Get in touch</a>
       </div>
@@ -570,16 +647,16 @@
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Leadership · System design · Applied AI</p>
+          <p class="eyebrow">Leadership · System design · <span class="eyebrow-ai">Applied AI</span></p>
           <h1>Ship systems that <span class="grad">think</span> at scale</h1>
-          <p class="tagline reveal is-in">I’m <strong>Shankar Swamy</strong>—a hands-on engineering leader with eight years of end-to-end ownership: architecture, product delivery, and teams, from early-stage startups to global enterprises. The last two years are defined by an AI-first lens.</p>
+          <p class="tagline reveal is-in">I’m <strong>Shankar Swamy</strong>—a hands-on engineering leader with eight years of end-to-end ownership: architecture, product delivery, and teams, from early-stage startups to global enterprises. The last two years are defined by <span class="ai-text">an AI-first lens</span>.</p>
           <div class="hero-badges reveal is-in">
             <span class="badge">8+ years production systems</span>
             <span class="badge">System design Architecture</span>
             <span class="badge">Enterprise software</span>
             <span class="badge">cloud platforms</span>
-            <span class="badge">AI products &amp; strategy</span>
-            <span class="badge">AI Agents</span>
+            <span class="badge badge--ai">AI products &amp; strategy</span>
+            <span class="badge badge--ai">AI &amp; agents</span>
           </div>
           <div class="actions reveal is-in">
             <a class="btn primary" href="https://cabeza-ai.vercel.app/" target="_blank" rel="noopener">Explore Cabeza.ai</a>
@@ -643,9 +720,9 @@
               <li><strong>Stack:</strong> Node.js, GraphQL, Supergraph, Next.js, and cloud patterns for scale.</li>
               <li>Strategic tradeoffs, architecture decisions, and operational excellence for customer-facing releases.</li>
             </ul>
-            <p class="subhead" style="margin-top:1rem">Reference build</p>
-            <div class="card" style="margin:0; padding:1rem 1.1rem">
-              <strong>BP Cloud Guardian (CloudSense)</strong> — <a href="https://cloudsense.lovable.app" target="_blank" rel="noopener">cloudsense.lovable.app</a> · Lovable prototype in the fleet / cloud product family.
+            <p class="subhead subhead--ai" style="margin-top:1rem">Reference build · AI-adjacent</p>
+            <div class="card ref-build--ai" style="margin:0; padding:1rem 1.1rem">
+              <strong>BP Cloud Guardian (CloudSense)</strong> — <a href="https://cloudsense.lovable.app" target="_blank" rel="noopener">cloudsense.lovable.app</a> · Lovable prototype: cloud + <span class="ai-text" style="font-size:0.9em">intelligent guardian</span> UX in the fleet product family.
             </div>
           </div>
         </li>
@@ -667,7 +744,7 @@
             <p class="subhead">Key projects</p>
             <ul>
               <li><strong>Cabeza (internal, Ayu)</strong> — Java monolith for multiple client surfaces: flows, services, performance.</li>
-              <li><strong>Ayu Sales App</strong> — Zero to major revenue engine (~<strong>10×</strong> offline / referral); led <strong>five engineers</strong>; agent recommendations, onboarding, visit &amp; movement tracking.</li>
+              <li><strong>Ayu Sales App</strong> — Zero to major revenue engine (~<strong>10×</strong> offline / referral); led <strong>five engineers</strong>; <span class="ai-text">intelligent agent recommendations</span>, onboarding, visit &amp; movement tracking.</li>
               <li><strong>Ayu Doc Connect</strong> — React Native (iOS &amp; Android) for real-time doctor visibility on referrals.</li>
             </ul>
           </div>
@@ -711,30 +788,30 @@
           <h3>Systems &amp; scale</h3>
           <p>From monoliths to <strong>GraphQL / supergraph</strong> patterns, real-time and mobile, <strong>AWS</strong> pipelines—shaped to the company’s phase, not the hype cycle.</p>
         </div>
-        <div class="card reveal stagger-2">
+        <div class="card card--ai reveal stagger-2">
           <div class="card-icon" aria-hidden="true">✦</div>
           <h3>AI in practice</h3>
-          <p>Intelligent features in healthcare, live AI-native product demos, and an <strong>AI education &amp; services</strong> practice through <strong>Cabeza.ai</strong>.</p>
+          <p><span class="ai-text">ML-style &amp; intelligent features</span> in healthcare, live <strong>AI-native</strong> product demos, and an <strong>AI education &amp; services</strong> practice through <strong>Cabeza.ai</strong>.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="cabeza" class="reveal">
+  <section id="cabeza" class="reveal section--ai">
     <div class="wrap">
-      <p class="section-kicker">AI agency &amp; product</p>
-      <h2 class="section-title">Cabeza.ai — elevating intelligence</h2>
+      <p class="section-kicker section-kicker--ai">AI agency &amp; product</p>
+      <h2 class="section-title">Cabeza.ai — elevating intelligence <span class="title-ai-mark">AI</span></h2>
       <p class="lead" style="max-width: 42rem"><a href="https://cabeza-ai.vercel.app/" target="_blank" rel="noopener">Cabeza.ai</a> is my public-facing <strong>AI-first studio</strong>: we help teams move from curiosity to <strong>strategy, education, and shipped automation</strong>—naturally and artificially. <em>Elevating Intelligence — Naturally and Artificially.</em></p>
       <div class="bento" style="margin-top:0.5rem">
-        <article class="card featured">
+        <article class="card featured featured--ai">
           <div>
             <span class="cabeza-mark">CABEZA.AI</span>
             <h2>Not just automations—an AI-first mindset</h2>
             <p style="margin-bottom:0.75rem; position: relative">Workshops, roadmaps, and <strong>custom AI workflows</strong> with integrations, testing, and continuous optimization. Built for founders and teams that want <strong>clarity, execution, and adoption</strong> in one place.</p>
             <div class="pill-row">
-              <span class="pill">AI education &amp; training</span>
+              <span class="pill pill--ai">AI education &amp; training</span>
               <span class="pill">Strategic consultation</span>
-              <span class="pill">Custom automation &amp; APIs</span>
+              <span class="pill pill--ai">Custom AI &amp; APIs</span>
             </div>
             <div class="cabeza-cta">
               <a class="btn primary" href="https://cabeza-ai.vercel.app/" target="_blank" rel="noopener">Visit cabeza-ai.vercel.app</a>
@@ -757,29 +834,29 @@
     </div>
   </section>
 
-  <section id="ai-builds" class="reveal">
+  <section id="ai-builds" class="reveal section--ai">
     <div class="wrap">
-      <p class="section-kicker">Live products</p>
-      <h2 class="section-title">AI-native applications &amp; demos</h2>
-      <p class="lead" style="max-width: 38rem">Shipped experiences where <strong>models, automation, and policy</strong> are the product—thoughtful UX, real integrations, and compliance where the domain demands it.</p>
+      <p class="section-kicker section-kicker--ai">Live products</p>
+      <h2 class="section-title">AI-native applications &amp; demos <span class="title-ai-mark">AI</span></h2>
+      <p class="lead" style="max-width: 38rem">Shipped experiences where <span class="ai-text">models, automation, and policy</span> are the product—thoughtful UX, real integrations, and compliance where the domain demands it.</p>
       <div class="bento" style="margin-top:1.25rem">
-        <div class="card proj-card reveal">
+        <div class="card proj-card proj-card--ai reveal">
           <div class="card-icon" aria-hidden="true">◎</div>
-          <h3 class="card-title">ChakraAlgoTrade</h3>
-          <p>AI-assisted <strong>algorithmic trading for Indian retail</strong> (NSE &amp; BSE): ML-style signals, <strong>Zerodha</strong> execution path, risk controls, live P&amp;L, <strong>Telegram</strong> alerts, paper / live / signal-only modes. <span class="proj-meta">SEBI market-hours positioning as published on the app.</span></p>
+          <h3 class="card-title">ChakraAlgoTrade <span class="proj-badge-ai">ML &amp; signals</span></h3>
+          <p><span class="ai-text">AI-assisted</span> <strong>algorithmic trading for Indian retail</strong> (NSE &amp; BSE): ML-style signals, <strong>Zerodha</strong> execution path, risk controls, live P&amp;L, <strong>Telegram</strong> alerts, paper / live / signal-only modes. <span class="proj-meta">SEBI market-hours positioning as published on the app.</span></p>
           <div class="spacer"></div>
           <a class="btn primary" style="margin-top:0.9rem" href="https://chakraalgotrade.lovable.app" target="_blank" rel="noopener">Open app</a>
         </div>
-        <div class="card proj-card reveal stagger-1">
+        <div class="card proj-card proj-card--ai reveal stagger-1">
           <div class="card-icon" aria-hidden="true">◎</div>
-          <h3 class="card-title">BP Cloud Guardian</h3>
+          <h3 class="card-title">BP Cloud Guardian <span class="proj-badge-ai">Cloud + AI UX</span></h3>
           <p>Cloud “guardian” experience tied to the bp / fleet product narrative, implemented as a fast, public shell through Lovable.</p>
           <div class="spacer"></div>
           <a class="btn" style="margin-top:0.9rem" href="https://cloudsense.lovable.app" target="_blank" rel="noopener">Open CloudSense</a>
         </div>
-        <div class="card proj-card reveal stagger-2" style="grid-column: span 12; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1.25rem;">
+        <div class="card proj-card proj-card--ai reveal stagger-2" style="grid-column: span 12; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1.25rem;">
           <div style="flex:1; min-width: 200px">
-            <h3 class="card-title" style="margin:0 0 0.35rem">Cabeza.ai site &amp; brand</h3>
+            <h3 class="card-title" style="margin:0 0 0.35rem">Cabeza.ai site &amp; brand <span class="proj-badge-ai">AI studio</span></h3>
             <p style="margin:0">The marketing and services surface for the studio—<strong>education, strategy, and custom AI builds</strong>—in one place.</p>
           </div>
           <a class="btn primary" href="https://cabeza-ai.vercel.app/" target="_blank" rel="noopener">cabeza-ai.vercel.app</a>
@@ -809,7 +886,7 @@
         <span class="chip">Elasticsearch</span>
         <span class="chip">WebSockets, WebRTC</span>
         <span class="chip">AWS: EC2, ALB, CodePipeline, SQS</span>
-        <span class="chip">ML / signal pipelines (product)</span>
+        <span class="chip chip--ai">ML / signal pipelines (product)</span>
       </div>
     </div>
   </section>
@@ -845,7 +922,7 @@
 
   <footer class="footer reveal">
     <div class="wrap">
-      <p>Shankar Swamy — engineering leader, AI practitioner, and builder of <a href="https://cabeza-ai.vercel.app/" target="_blank" rel="noopener">Cabeza.ai</a>. Open to <strong>AI Engineer</strong>, <strong>Engineering Team Lead</strong>, and <strong>Staff / Principal Engineer</strong> roles. Updated April 2026.</p>
+      <p>Shankar Swamy — engineering leader, <span class="ai-text">AI practitioner</span>, and builder of <a href="https://cabeza-ai.vercel.app/" target="_blank" rel="noopener">Cabeza.ai</a>. Open to <span class="ai-text">AI Engineer</span>, <strong>Engineering Team Lead</strong>, and <strong>Staff / Principal Engineer</strong> roles. Updated April 2026.</p>
       <div class="footer-links">
         <a href="mailto:shankarswamy294@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/shankarswamy294/" target="_blank" rel="noopener">Personal LinkedIn</a>
